@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        base_image: python:3.10
+    restart: on-failure
+    env_file: .env
+    volumes:
+      - .:/workspace
