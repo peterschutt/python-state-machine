@@ -13,14 +13,14 @@ omit = ["tests/*"]
 check_untyped_defs = true
 disallow_incomplete_defs = true
 disallow_untyped_defs = true
-ignore_missing_imports = false
+ignore_missing_imports = true
 show_error_codes = true
 warn_redundant_casts = true
 warn_return_any = true
 warn_unused_ignores = true
 
 [tool.pytest.ini_options]
-addopts = "--cov=app"
+addopts = "--cov=app -v --doctest-modules --doctest-glob=*.md"
 
 [tool.poetry]
 name = "python-docker-project"
@@ -33,14 +33,20 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
+attrs = "^21.4"
+cattrs = "^22.1"
+structlog = "^21.5"
+transitions = "^0.8.11"
+aiopubsub = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"
 flake8 = "*"
 isort = "*"
 mypy = "*"
-pytest = "^7.0.1"
-pytest-cov = "^3.0.0"
+pytest = "^7.0"
+pytest-cov = "^3.0"
+rich = "^12.3.0"
 
 [tool.poetry.scripts]
 app = "app.main:main"

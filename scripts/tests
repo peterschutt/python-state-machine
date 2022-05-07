@@ -14,4 +14,4 @@ echo "+++ Running mypy type checks"
 python -m mypy .
 
 echo "+++ Running tests"
-pytest
+pytest "$@"
